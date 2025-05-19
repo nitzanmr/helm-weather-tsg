@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # Generate a unique name using the Helm release name
+  name: {{ .Release.Name }}-app-config
+  annotations:
+    # Or alternatively use this to checksum just the values that affect this ConfigMap
+    checksum/values: {{ toYaml .Values.config | sha256sum }}
+data:
+  BG_COLOR: {{ .Values.config.bgColor  }}
