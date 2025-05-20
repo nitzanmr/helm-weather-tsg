@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: nitzanm594/weatherapp-tsg
-  tag: "47" 
+  tag: "50" 
   pullPolicy: Always
 # Add this section to use the pull secret
 imagePullSecrets:
