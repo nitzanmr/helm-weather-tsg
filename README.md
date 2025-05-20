@@ -4,7 +4,8 @@ This repository contains a Helm chart for deploying the WeatherApp application o
 
 This repo in combenation with wetherapp-tsg are the projects code. 
 In this project i created infestructure on azure cp. 
-
+## Architecture
+<img>https://github.com/nitzanmr/helm-weather-tsg/blob/main/TSG-Project-Arch.png</img>
 ## Descions:
  - Self hosted vault and agent. the public ip was used only to access the instance via ssh, can use bastion to access privatly. 
  - Application connected to vault and taking the secret of the weather_api from it via a token. (next ill try and create a role base for kubernetes to access the data) - switched because it is the same process but with api token i needed.
