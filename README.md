@@ -93,3 +93,12 @@ The vault need to be unsealed for the project to work and for you to be able to 
     * service.type: Service type (ClusterIP, LoadBalancer).
     * ingress.enabled: Enable/disable ingress.
     * config.bgColor: Background color for the app UI.
+
+## Validation
+    You can check the ip of the ingress with 
+    ```sh 
+    kubectl get ingress -A
+    ```
+    It will be under ADDRESS.
+    you can access the app via the https://ADDRESS/weather
+    
