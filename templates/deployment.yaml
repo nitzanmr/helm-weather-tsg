@@ -32,5 +32,7 @@ spec:
                   key: BG_COLOR
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
-        - name: {{ .Values.imagePullSecret[0].name }}
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
