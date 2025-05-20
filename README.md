@@ -2,10 +2,18 @@
 
 This repository contains a Helm chart for deploying the WeatherApp application on Kubernetes. The chart provides configuration for deployment, service, ingress, and integration with Vault for secrets management.
 
+The helm chart uses the container created in this repo : 
+<href>https://github.com/nitzanmr/wetherapp-TSG</href>
+
 This repo in combenation with wetherapp-tsg are the projects code. 
-In this project i created infestructure on azure cp. 
+In this project i created infestructure on Azure cp. 
+This project contains a public instance that inside it runs an azure devops agent. and a Hashicorp vault container. 
+The vault need to be unsealed for the project to work and for you to be able to access it. 
+
+
 ## Architecture
 <img>https://github.com/nitzanmr/helm-weather-tsg/blob/main/TSG-Project-Arch.png</img>
+
 ## Descions:
  - Self hosted vault and agent. the public ip was used only to access the instance via ssh, can use bastion to access privatly. 
  - Application connected to vault and taking the secret of the weather_api from it via a token. (next ill try and create a role base for kubernetes to access the data) - switched because it is the same process but with api token i needed.
@@ -37,10 +45,10 @@ In this project i created infestructure on azure cp.
 ## Prerequisites
 
 - Helm - (https://helm.sh/)
-- Kubernetes cluster
+- Kubernetes cluster AKS
 - Vault - (https://www.vaultproject.io/) for secrets management
 - DockerHub credentials (if using a private image)
-- Nginx ingress controller or other ingress controller
+- Nginx ingress controller or other ingress controller.
 
 ## Installation
 
