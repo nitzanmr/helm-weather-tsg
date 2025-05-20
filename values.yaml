@@ -4,7 +4,6 @@ image:
   repository: nitzanm594/weatherapp-tsg
   tag: "54" 
   pullPolicy: Always
-# Add this section to use the pull secret
 imagePullSecrets:
   - name: dockerhub
 service:

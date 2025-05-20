@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,6 +34,6 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- if .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
+      imagePullSecrets: 
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }} # Dockerhub secret 
       {{- end }}
