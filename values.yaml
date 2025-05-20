@@ -2,8 +2,8 @@ replicaCount: 2
 
 image:
   repository: nitzanm594/weatherapp-tsg
-  tag: 0.1.20 
-  pullPolicy: IfNotPresent
+  tag: "47" 
+  pullPolicy: Always
 # Add this section to use the pull secret
 imagePullSecrets:
   - name: dockerhub

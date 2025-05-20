@@ -20,6 +20,11 @@ spec:
             - containerPort: 9090
               name: weatherapp-port
           env:
+            - name: VAULT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: vault-token
+                  key: token
             - name: BG_COLOR
               valueFrom:
                 configMapKeyRef:
