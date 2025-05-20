@@ -5,7 +5,7 @@ image:
   tag: "50" 
   pullPolicy: Always
 # Add this section to use the pull secret
-imagePullSecrets:
+imagePullSecret:
   - name: dockerhub
 service:
   type: NodePort
