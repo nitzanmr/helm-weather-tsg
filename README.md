@@ -28,10 +28,12 @@ This repository contains a Helm chart for deploying the WeatherApp application o
    cd helm-weather-tsg
 
 2. **Create Vault Secret:**
+   ```sh
     export VAULT_TOKEN=your-vault-token
     kubectl create secret generic vault-token --from-literal=token=$VAULT_TOKEN
 
 3. **Create DockerHub Pull Secret:**
+   ```sh
     kubectl create secret docker-registry dockerhub \
     --docker-username=<your-username> \
     --docker-password=<your-password> \
