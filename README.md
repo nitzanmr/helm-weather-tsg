@@ -56,19 +56,29 @@ The vault need to be unsealed for the project to work and for you to be able to 
    ```sh
    git clone https://gitlab.com/nitzanmr/helm_weather.git
    cd helm-weather-tsg
+2. **configure azure cli**
+    ```sh
+    azure login
+3. **configure Azure AKS Kubectl**
+    ```sh
+    az aks get-credentials --resource-group NetworkWatcherRG --name TSGAKS --overwrite-existing
 
-2. **Create Vault Secret:**
+4. **Create Vault Secret:**
    ```sh
     export VAULT_TOKEN=your-vault-token
     kubectl create secret generic vault-token --from-literal=token=$VAULT_TOKEN
 
-3. **Create DockerHub Pull Secret:**
+5. **Create DockerHub Pull Secret:**
    ```sh
     kubectl create secret docker-registry dockerhub \
     --docker-username=<your-username> \
     --docker-password=<your-password> \
     --docker-email=<your-email>
-4. **helm install weatherapp**
+6. **Kubectl install nginx controller**
+    ```sh
+    kubectl create --filename https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
+
+7. **helm install weatherapp**
 
     for overiding the defaults:
     helm install weatherapp . -f my-values.yaml
