@@ -1,6 +1,27 @@
-# helm-weather-tsg
+# Tsg-project-azure
 
 This repository contains a Helm chart for deploying the WeatherApp application on Kubernetes. The chart provides configuration for deployment, service, ingress, and integration with Vault for secrets management.
+
+This repo in combenation with wetherapp-tsg are the projects code. 
+In this project i created infestructure on azure cp. 
+
+## Descions:
+ - Self hosted vault and agent. the public ip was used only to access the instance via ssh. was succssefully used bastion to reach it before the ip. 
+ - Application connected to vault and taking the secret of the weather_api from it via a token. (next ill try and create a role base for kubernetes to access the data) - switched because it is the same process but with api token i needed.
+ - Dockerhub is accessed via a PAT.
+ - Used github instead of azure devops repo - instructed by instructure.
+ - Created AKS via the gui configured use of calico for better scailablity.
+ - AKS can be accessed only from my pc diceded via an ip. 
+ - Created an ingress controller with the command: kubectl create --filename https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml - tried with helm install but there is a problem with the latest version.
+ - The self hosted agent is on the Default node group and is configured locally as instructed in adding an agent.
+ - Argocd is installed on the cluster via HELM from https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+ - Deployment is handled via this repo with a pull mechanism with argocd.
+ - App is routed with ingress at port 80 and 443 and can be accessed at the route /weather
+ - The ingress is forwarding the traffic to the app via the nodeport. (can also be a ClusterIP)
+ - The ingress is creating a LB which has access to the internet currently all of it. ill prefer to limit it to our company. choose it because i tried to create a agic but didnt have the time for it. 
+ - The Pipeline is changing the version of the container inside of the values.yaml file in this repo. it is then gets updated in argocd. 
+ - Argocd is working with a pull based timeline of 10 min sync.
+ 
 
 ## Features
 
