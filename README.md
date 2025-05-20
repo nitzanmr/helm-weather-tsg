@@ -45,7 +45,7 @@ The vault need to be unsealed for the project to work and for you to be able to 
 ## Prerequisites
 
 - Helm - (https://helm.sh/)
-- Kubernetes cluster AKS
+- Kubernetes cluster - AKS
 - Vault - (https://www.vaultproject.io/) for secrets management
 - DockerHub credentials (if using a private image)
 - Nginx ingress controller or other ingress controller.
