@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: nitzanm594/weatherapp-tsg
-  tag: "60" 
+  tag: "61" 
   pullPolicy: Always
 imagePullSecrets:
   - name: dockerhub
