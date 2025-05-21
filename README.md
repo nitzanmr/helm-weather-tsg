@@ -12,8 +12,7 @@ The vault need to be unsealed for the project to work and for you to be able to 
 
 
 ## Architecture
-<img>https://github.com/nitzanmr/helm-weather-tsg/blob/main/TSG-Project-Arch.png</img>
-
+![Architecture](TSG-Project-Arch.png)
 ##ArgoCD
 ![Argocd configuration of the project](argocd.png)
 
